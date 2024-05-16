@@ -39,7 +39,7 @@ function SearchProduct() {
               <tr>
                 <th>S.No</th>
                 <th>Name</th>
-                <th>Image</th>
+                {/* <th>Image</th> */}
                 <th>price</th>
                 <th>Description</th>
               </tr>
@@ -49,13 +49,13 @@ function SearchProduct() {
                 <tr key={index}>
                   <td>{index + 1}</td>
                   <td>{data.name}</td>
-                  <td>
+                  {/* <td>
                     <img
                       style={{ width: 100 }}
                       src={`https://product-lists-ser.vercel.app/${data.file}`}
                       alt={data.name}
                     />
-                  </td>
+                  </td> */}
                   <td>$ {data.price}</td>
                   <td>{data.descp}</td>
                 </tr>
