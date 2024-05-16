@@ -12,7 +12,7 @@ const app = express();
 
 app.use(bodyParser.json())
 
-app.use(cors({ origin: "*" }));
+app.use(cors({ origin: "https://product-lists-cli.vercel.app/" }));
 
 app.use('/uploads', express.static('uploads'));
 
