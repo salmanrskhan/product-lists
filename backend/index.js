@@ -19,9 +19,9 @@ app.use('/uploads', express.static('uploads'));
 app.use('/', loginRoute)
 app.use('/', productRoute)
 
-// app.use("/", (req, res) => {
-//     res.send("live")
-// })
+app.use("/", (req, res) => {
+    res.send("live")
+})
 
 const PORT = process.env.PORT || 4500
 
