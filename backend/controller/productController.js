@@ -126,7 +126,7 @@ const searchProduct = (req, res) => {
 
 
 
-// module.exports = { addProduct, getAllProduct, getProductById, delProduct, updateProduct, searchProduct };
+module.exports = { addProduct, getAllProduct, getProductById, delProduct, updateProduct, searchProduct };
 
 // Import Route Handlers
 const { addProduct, getAllProduct, getProductById, delProduct, updateProduct, searchProduct } = require('./handlers');
