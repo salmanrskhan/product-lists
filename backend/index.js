@@ -25,10 +25,6 @@ app.use("/", (req, res) => {
 
 const PORT = process.env.PORT || 4500
 
-// app.get("/", async (req, res) => {
-//     res.send("get response at 4500");
-// })
-
 
 app.listen(PORT, () => {
     console.log("server is live at, " + PORT)
