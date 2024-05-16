@@ -16,7 +16,7 @@ function Login() {
         }
 
         try {
-            const response = await fetch("http://localhost:4500/login/admin", {
+            const response = await fetch("https://product-lists-ser.vercel.app/login/admin", {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

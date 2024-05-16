@@ -13,7 +13,7 @@ function Register() {
     async function signUp() {
         try {
             let item = { name, email, password };
-            let result = await fetch("http://localhost:4500/login", {
+            let result = await fetch("https://product-lists-ser.vercel.app/login", {
                 method: 'POST',
                 headers: {
                     "Content-Type": "application/json",
