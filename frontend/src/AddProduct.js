@@ -6,6 +6,7 @@ function AddProduct() {
     const [price, setPrice] = useState("");
     const [descp, setDescp] = useState("");
     const [successMessage, setSuccessMessage] = useState("");
+    const [isAddBtnDis, setIsAddBtnDis] = useState(true)
 
     const fileInputRef = useRef(null);
 
@@ -17,6 +18,10 @@ function AddProduct() {
         // formData.append("file", fileInputRef.current.files[0]);
         formData.append("price", price);
         formData.append("descp", descp);
+
+        useEffect(() => {
+            setIsAddBtnDis(!(name.trim() && price.trim()))
+        }, [name, price])
 
         try {
             let result = await fetch("https://product-lists-ser.vercel.app/product", {
@@ -64,7 +69,7 @@ function AddProduct() {
                     /> <br /> */}
                     <input type="number" placeholder='price' value={price} onChange={(e) => setPrice(e.target.value)} className="form-control" /> <br />
                     <input type="text" placeholder='descp' value={descp} onChange={(e) => setDescp(e.target.value)} className="form-control" /> <br />
-                    <button onClick={addProduct} className="btn btn-primary">Add Product</button>
+                    <button onClick={addProduct} disabled={isAddBtnDis} className="btn btn-primary">Add Product</button>
                 </form>
             </div>
         </div>
