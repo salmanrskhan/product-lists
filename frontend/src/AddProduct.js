@@ -10,6 +10,10 @@ function AddProduct() {
 
     const fileInputRef = useRef(null);
 
+    useEffect(() => {
+        setIsAddBtnDis(!(name.trim() && price.trim()))
+    }, [name, price])
+
     async function addProduct(e) {
         e.preventDefault();
         
@@ -18,10 +22,6 @@ function AddProduct() {
         // formData.append("file", fileInputRef.current.files[0]);
         formData.append("price", price);
         formData.append("descp", descp);
-
-        useEffect(() => {
-            setIsAddBtnDis(!(name.trim() && price.trim()))
-        }, [name, price])
 
         try {
             let result = await fetch("https://product-lists-ser.vercel.app/product", {
