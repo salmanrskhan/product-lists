@@ -1,5 +1,22 @@
 const Product = require('../models/product');
 const path = require('path'); // To work with file paths
+// added for vercel
+const multer = require('multer');
+const Router = express.Router()
+
+const storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, 'uploads'); // Specify the directory where files will be stored
+  },
+  filename: function (req, file, cb) {
+    const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9);
+    cb(null, uniqueSuffix + path.extname(file.originalname)); // Rename the file if needed
+  }
+});
+
+const upload = multer({ storage: storage });
+
+
 
 const addProduct = (req, res) => {
   const { name, price, descp } = req.body;
@@ -109,13 +126,15 @@ const searchProduct = (req, res) => {
 
 
 
-module.exports = { addProduct, getAllProduct, getProductById, delProduct, updateProduct, searchProduct };
+// module.exports = { addProduct, getAllProduct, getProductById, delProduct, updateProduct, searchProduct };
 
+// Import Route Handlers
+const { addProduct, getAllProduct, getProductById, delProduct, updateProduct, searchProduct } = require('./handlers');
 
-// const updateData = {
-//   name: req.body.name,
-//   price: req.body.price,
-//   descp: req.body.descp,
-//   // file: req.file ? path.join('uploads', req.file.filename) : '',
-// };
+// Define Route for Adding Product with File Upload
+Router.post('/product', upload.single('file'), addProduct);
+
+// Export Router
+module.exports = Router;
+
 

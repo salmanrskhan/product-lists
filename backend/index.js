@@ -34,22 +34,3 @@ app.listen(PORT, () => {
     console.log("server is live at, " + PORT)
 })
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-// package.json
-// "scripts": {
-//     "start": "index.js",
-//     "test": "echo \"Error: no test specified\" && exit 1",
-//     "dev": "nodemon index.js"
-//   }
