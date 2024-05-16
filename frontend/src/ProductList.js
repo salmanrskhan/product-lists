@@ -23,7 +23,7 @@ function ProductList() {
 
     const fetchData = async () => {
         try {
-            const result = await fetch("http://localhost:4500/product");
+            const result = await fetch("https://product-lists-ser.vercel.app/product");
             if (result.ok && isMounted.current) {
                 const products = await result.json();
                 if (products.length === 0) {
@@ -42,7 +42,7 @@ function ProductList() {
 
     async function delProduct(productId) {
         try {
-            const result = await fetch(`http://localhost:4500/product/${productId}`, {
+            const result = await fetch(`https://product-lists-ser.vercel.app/product/${productId}`, {
                 method: 'DELETE',
             });
             if (result.ok) {
@@ -98,7 +98,7 @@ function ProductList() {
                                             <td>
                                                 <img
                                                     style={{ width: 100 }}
-                                                    src={`http://localhost:4500/${product.file}`}
+                                                    src={`https://product-lists-ser.vercel.app/${product.file}`}
                                                     alt={product.name}
                                                 />
                                             </td>

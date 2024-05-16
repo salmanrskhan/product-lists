@@ -19,7 +19,7 @@ function AddProduct() {
         formData.append("descp", descp);
 
         try {
-            let result = await fetch("http://localhost:4500/product", {
+            let result = await fetch("https://product-lists-ser.vercel.app/product", {
                 method: 'POST',
                 body: formData,
             });
@@ -112,7 +112,7 @@ export default AddProduct;
 //         formData.append("descp", descp);
 
 //         try {
-//             let result = await fetch("http://localhost:4500/product", {
+//             let result = await fetch("https://product-lists-ser.vercel.app/product", {
 //                 method: 'POST',
 //                 body: formData,
 //             });
@@ -130,7 +130,7 @@ export default AddProduct;
 
 
 // =================================
-// let result = await fetch("http://localhost:4500/product", {
+// let result = await fetch("https://product-lists-ser.vercel.app/product", {
 //     method: 'POST',
 //     body: formData,
 // });

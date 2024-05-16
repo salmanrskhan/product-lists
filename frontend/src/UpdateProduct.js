@@ -18,7 +18,7 @@ function UpdateProduct() {
     useEffect(() => {
         async function fetchData() {
             try {
-                const result = await fetch(`http://localhost:4500/product/${productId}`);
+                const result = await fetch(`https://product-lists-ser.vercel.app/product/${productId}`);
                 if (result.status !== 200) {
                     throw new Error('Failed to fetch product data');
                 }
@@ -74,7 +74,7 @@ function UpdateProduct() {
                 updatedData.append("file", file);
             }
 
-            const response = await fetch(`http://localhost:4500/product/${productId}`, {
+            const response = await fetch(`https://product-lists-ser.vercel.app/product/${productId}`, {
                 method: 'PUT',
                 body: updatedData,
             });
@@ -149,7 +149,7 @@ function UpdateProduct() {
 
                                 : (
                                     <div className="col-sm-2">
-                                        <img style={{ width: 50 }} src={`http://localhost:4500/${datas.file}`} alt={datas.name} />
+                                        <img style={{ width: 50 }} src={`https://product-lists-ser.vercel.app/${datas.file}`} alt={datas.name} />
                                     </div>
                                 )
 

@@ -10,7 +10,7 @@ function SearchProduct() {
     setSearchQuery(key);
 
     if (key.length) {
-      let result = await fetch(`http://localhost:4500/product/search/${key}`);
+      let result = await fetch(`https://product-lists-ser.vercel.app/product/search/${key}`);
       result = await result.json();
       setData(result);
     } else {
@@ -52,7 +52,7 @@ function SearchProduct() {
                   <td>
                     <img
                       style={{ width: 100 }}
-                      src={`http://localhost:4500/${data.file}`}
+                      src={`https://product-lists-ser.vercel.app/${data.file}`}
                       alt={data.name}
                     />
                   </td>
