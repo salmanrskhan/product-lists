@@ -66,7 +66,7 @@ function ProductList() {
                         <tr>
                             <th>S.No</th>
                             <th>Name</th>
-                            <th>Image</th>
+                            {/* <th>Image</th> */}
                             <th>Price</th>
                             <th>Description</th>
                             <th>Action</th>
@@ -95,13 +95,13 @@ function ProductList() {
                                         <tr key={product._id}>
                                             <td>{index + 1}</td>
                                             <td>{product.name}</td>
-                                            <td>
+                                            {/* <td>
                                                 <img
                                                     style={{ width: 100 }}
                                                     src={`https://product-lists-ser.vercel.app/${product.file}`}
                                                     alt={product.name}
                                                 />
-                                            </td>
+                                            </td> */}
                                             <td>$ {product.price}</td>
                                             <td>{product.descp}</td>
                                             <td>

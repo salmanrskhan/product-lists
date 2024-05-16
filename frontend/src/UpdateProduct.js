@@ -8,7 +8,7 @@ function UpdateProduct() {
         name: "",
         price: "",
         descp: "",
-        file: null,
+        // file: null,
     });
     const [successMessage, setSuccessMessage] = useState("");
     const isFormEmpty = !formData.name && !formData.price && !formData.descp && formData.file === null;
@@ -53,11 +53,11 @@ function UpdateProduct() {
     };
 
     const handleInputImage = (e) => {
-        const file = fileInputRef.current.files[0];
+        // const file = fileInputRef.current.files[0];
 
         setFormData({
             ...formData,
-            file: file,
+            // file: file,
         });
     };
 
@@ -70,9 +70,9 @@ function UpdateProduct() {
             updatedData.append("price", price);
             updatedData.append("descp", descp);
 
-            if (file !== null) {
-                updatedData.append("file", file);
-            }
+            // if (file !== null) {
+            //     updatedData.append("file", file);
+            // }
 
             const response = await fetch(`https://product-lists-ser.vercel.app/product/${productId}`, {
                 method: 'PUT',
@@ -89,7 +89,7 @@ function UpdateProduct() {
                     name: "",
                     price: "",
                     descp: "",
-                    file: null,
+                    // file: null,
                 });
 
                 setTimeout(() => {
@@ -135,7 +135,7 @@ function UpdateProduct() {
                         className="form-control"
                     /> <br />
 
-                    <div className="d-flex">
+                    {/* <div className="d-flex">
                         <div className="col-sm-10">
                             <input
                                 type="file"
@@ -152,10 +152,8 @@ function UpdateProduct() {
                                         <img style={{ width: 50 }} src={`https://product-lists-ser.vercel.app/${datas.file}`} alt={datas.name} />
                                     </div>
                                 )
-
                         }
-
-                    </div><br />
+                    </div><br /> */}
 
                     <button
                         type="button"
