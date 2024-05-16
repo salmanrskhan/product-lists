@@ -1,9 +1,9 @@
 const Product = require('../models/product');
-const path = require('path'); // To work with file paths
+const path = require('path');
 
 const addProduct = (req, res) => {
   const { name, price, descp } = req.body;
-  const file = req.file; // Access the uploaded file
+  const file = req.file;
 
   const product = new Product({
     name,
@@ -62,9 +62,7 @@ const delProduct = (req, res) => {
 
 const updateProduct = (req, res) => {
   const productId = req.params.id;
-  const file = req.file; // Access the uploaded file
-
-  // Construct the update data object with conditional file update
+  const file = req.file; 
   const updateData = {
     name: req.body.name,
     price: req.body.price,
@@ -72,7 +70,6 @@ const updateProduct = (req, res) => {
   };
 
   if (file) {
-    // If a new file is provided, update the file path
     updateData.file = path.join('uploads', file.filename);
   }
 
@@ -91,9 +88,8 @@ const updateProduct = (req, res) => {
 
 
 const searchProduct = (req, res) => {
-  const name = req.params.name; // Get the product name from the URL parameter
+  const name = req.params.name;
 
-  // Use a regular expression to perform a case-insensitive search
   Product.find({ name: { $regex: name, $options: 'i' } })
     .then((docs) => {
       if (docs.length > 0) {
