@@ -3,6 +3,7 @@ import { Nav, NavDropdown } from 'react-bootstrap';
 import Navbar from 'react-bootstrap/Navbar';
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
+import logo from '../src/assets/logo.png'
 
 function Header() {
   const userName = localStorage.getItem('user-name'); // Retrieve the user's name
