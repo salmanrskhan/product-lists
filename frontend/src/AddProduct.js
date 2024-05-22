@@ -57,8 +57,7 @@ function AddProduct() {
         <div>
             <Header />
             <h2>Add</h2>
-            <div className="col-sm-6 offset-sm-3">
-                <br />
+            <div className="col-sm-6 offset-sm-3 cont-wrapper">
                 {successMessage && <div className="text-success">{successMessage}</div>}
                 <form encType="multipart/form-data">
                     <input type="text" placeholder='Name' value={name} onChange={(e) => setName(e.target.value)} className="form-control" /> <br />

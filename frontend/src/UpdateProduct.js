@@ -110,7 +110,7 @@ function UpdateProduct() {
         <div>
             <Header />
             <h2>Update</h2>
-            <div className="col-sm-6 offset-sm-3">
+            <div className="col-sm-6 offset-sm-3 cont-wrapper">
                 {successMessage && <div className="text-success">{successMessage}</div>}
                 <form>
                     <input

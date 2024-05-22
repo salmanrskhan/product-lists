@@ -60,7 +60,7 @@ function ProductList() {
         <div>
             <Header />
             <h2>Products</h2>
-            <div className="col-sm-10 offset-sm-1">
+            <div className="col-sm-10 offset-sm-1 cont-wrapper table-cont">
                 <Table striped bordered hover>
                     <thead>
                         <tr>

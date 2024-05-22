@@ -22,7 +22,7 @@ function SearchProduct() {
     <div>
       <Header />
       <h2>Search</h2>
-      <div className="col-sm-6 offset-sm-3">
+      <div className="col-sm-6 offset-sm-3 cont-wrapper pb-0">
         <input
           type="text"
           onChange={(e) => search(e.target.value)}
@@ -32,7 +32,7 @@ function SearchProduct() {
         />{' '}
         <br />
       </div>
-      <div className="col-sm-10 offset-sm-1">
+      <div className="col-sm-10 offset-sm-1 table-cont cont-wrapper">
         {searchQuery.length > 0 && data.length > 0 ? ( 
           <Table striped bordered hover>
             <thead>

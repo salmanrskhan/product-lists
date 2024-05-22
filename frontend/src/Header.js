@@ -18,13 +18,15 @@ function Header() {
     <div>
       <Navbar bg="dark" data-bs-theme="dark">
         <Container>
-          <Navbar.Brand href="#home">E-commerce</Navbar.Brand>
-          <Nav className="me-auto navbar_wrapper">
-            {userName ? ( // Check if user is logged in
+          <Navbar.Brand href="/">
+          <img src={logo} alt="" />
+          </Navbar.Brand>
+          <Nav className="mx-auto navbar_wrapper">
+            {userName ? (
               <>
                 <Link to="/">Product List</Link>
                 <Link to="/add">Add Product</Link>
-                <Link to="/update">Update Product</Link>
+                {/* <Link to="/update">Update Product</Link> */}
                 <Link to="/search">Search Product</Link>
               </>
             ) : (
@@ -34,7 +36,7 @@ function Header() {
               </>
             )}
           </Nav>
-          {userName ? ( // Check if user is logged in
+          {userName ? (
             <Nav>
               <NavDropdown title={userName}>
                 <NavDropdown.Item onClick={logout}>Logout</NavDropdown.Item>

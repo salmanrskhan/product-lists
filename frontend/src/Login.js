@@ -52,7 +52,7 @@ function Login() {
         <div>
             <Header />
             <h2>Login</h2>
-            <div className="col-sm-6 offset-sm-3">
+            <div className="col-sm-6 offset-sm-3 cont-wrapper">
                 <input
                     type="text"
                     placeholder='Email'
