@@ -30,6 +30,11 @@ h2{
   margin-bottom: 4px;
 }
 
+.dropdown-menu[data-bs-popper] {
+  left: unset!important;
+  right: 0;
+}
+
 
 @media only screen and (max-width: 600px) {
   .navbar-expand .navbar-nav {
